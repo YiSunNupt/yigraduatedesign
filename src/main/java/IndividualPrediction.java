@@ -2,8 +2,6 @@ import util.InfoMatrixGenerating;
 
 import java.util.*;
 
-import static java.util.Arrays.*;
-
 //根据个人浏览记录预测
 public class IndividualPrediction {
 

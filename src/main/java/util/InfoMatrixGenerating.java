@@ -10,7 +10,7 @@ public class InfoMatrixGenerating {
 
     public static void WriteGenreMatrixFile() {
 
-        List<String> itemsList = new TrainDataReadAndWriteToStorage().readFromFile(
+        List<String> itemsList = new DataReadAndWrite().readFromFile(
                 "F:\\chromeDownload\\ml-100k\\ml-100k\\u.item");
 
 
@@ -53,7 +53,7 @@ public class InfoMatrixGenerating {
 
     //参数matrix文件路径，行数，列数，分隔符
     public static int[][] getInfoMatrix(String path,int rows,int cols,String delimiter) throws Exception {
-        List<String> lineList = new TrainDataReadAndWriteToStorage().readFromFile(path);
+        List<String> lineList = new DataReadAndWrite().readFromFile(path);
 
         int[][] infoMatrix=new int[rows][cols];
 

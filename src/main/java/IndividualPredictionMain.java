@@ -1,9 +1,12 @@
 import redis.clients.jedis.Jedis;
+import util.DataReadAndWrite;
 import util.InfoMatrixGenerating;
 import util.ItemRequestHitoryProbComputing;
 import util.RedisPoolConnection;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class IndividualPredictionMain {
 
@@ -11,6 +14,23 @@ public class IndividualPredictionMain {
 
 
     public static void main(String[] args) throws Exception {
+        IndividualPredictionMain indiPre=new IndividualPredictionMain();
+        Set<Integer> predictSet=indiPre.getTopKPredictItemOfSingleUser(1,100);
+
+        //有的用户并没有请求
+        // i>=463的用户都没有再做请求，所以此用户之后均返回NaN
+        for(int i=1;i<=943;i++) {
+            System.out.print(i);
+            System.out.print("  ");
+            System.out.println(indiPre.computeHitRate(
+                    "F:\\chromeDownload\\ml-100k\\ml-100k\\u1.test",
+                    i,
+                    predictSet));
+        }
+    }
+
+    //返回预测的用户i最有可能请求的前K个item
+    public Set<Integer> getTopKPredictItemOfSingleUser(int user_id,int K) throws Exception {
         IndividualPrediction indiPre=new IndividualPrediction();
 
         //由历史访问获得的文件历史访问概率
@@ -19,7 +39,7 @@ public class IndividualPredictionMain {
         Jedis jedis=new RedisPoolConnection().getLocalJedis();
 
         //找出用户1的历史访问记录
-        List<String> reqHistory=jedis.lrange("user_"+1,0,-1);
+        List<String> reqHistory=jedis.lrange("user_"+user_id,0,-1);
 
         //
         int[] reqHisArr=new int[1683];
@@ -38,23 +58,42 @@ public class IndividualPredictionMain {
         double[] probsPredicts=indiPre.getUnBrowsedContentPredictProbsWithGenreMatrix(
                 reqHisArr, historyReqPrb,itemGenreSimilarMatrix);
 
-        int[] topKPredict=indiPre.pickTopKItem(probsPredicts,100);
+        int[] topKPredict=indiPre.pickTopKItem(probsPredicts,K);
+
+        Set<Integer> topKPredictSet=new HashSet<Integer>();
+
+        for(int ele:topKPredict){
+            topKPredictSet.add(ele);
+        }
+
+        return topKPredictSet;
+    }
 
 
-        double total=0;
 
-        //for(int ele:topKPredict){
-        //    total+=probsPredicts[ele];
-        //}
+    public double computeHitRate(String testDataPath,int user_id,Set<Integer> predictSet){
 
-        for(int i=0;i<probsPredicts.length;i++){
-            total+=probsPredicts[i];
+        List<String> lineList=DataReadAndWrite.readFromFile(testDataPath);
+
+        Set<Integer> userActualReq=new HashSet<Integer>();
+        for(String str : lineList){
+            String[] strArr=str.split("\t");
+            if(Integer.valueOf(strArr[0])!=user_id){
+                continue;
+            }else{
+                userActualReq.add(Integer.valueOf(strArr[1]));
+            }
+        }
+
+        int hitNum=0;
+        for(int i:userActualReq){
+            if(predictSet.contains(i)){
+                hitNum+=1;
+            }
         }
 
 
-        //for(int i=262;i<269;i++){
-         //   System.out.println(probsPredicts[i]);
-       // }
-        System.out.println(total);
+        return hitNum*1.0/userActualReq.size();
+
     }
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TrainDataReadAndWriteToStorage {
+public class DataReadAndWrite {
 
 
     public void readAndStore(String path,Jedis jedis){
@@ -20,7 +20,7 @@ public class TrainDataReadAndWriteToStorage {
     }
 
 
-    public List<String> readFromFile(String path){
+    public static List<String> readFromFile(String path){
         List<String> list = new ArrayList<String>();
         try
         {
@@ -78,4 +78,7 @@ public class TrainDataReadAndWriteToStorage {
             e.printStackTrace();
     }
     }
+
+
+
 }
