@@ -51,7 +51,9 @@ public class IndividualPrediction {
     //genreMatrix下标是从0，开始
 
     //返回预测数组，数组下标index就是i-th item（从1开始）
-    public double[] getUnBrowsedContentPredictProbsWithGenreMatrix(int[] hisRecord, double[] viewProbs,
+
+    //加入用户评分作为参考依据
+    public double[] getUnBrowsedContentPredictProbsWithGenreMatrix(int[] hisRecord,int[] rates,double radio, double[] viewProbs,
                                                                    double[][] similarMatrixWithGenre){
         double[] probsPredicts=new double[similarMatrixWithGenre.length+1];
 
@@ -65,7 +67,9 @@ public class IndividualPrediction {
                 for(int j=1;j<=similarMatrixWithGenre.length;j++){
                     if(hisRecord[j]==1){
                         up+=similarMatrixWithGenre[i-1][j-1]*viewProbs[j];
+                        up+=rates[j]*1.0/5*radio;
                         down+=similarMatrixWithGenre[i-1][j-1];
+                        //down=1;
                     }
                 }
 

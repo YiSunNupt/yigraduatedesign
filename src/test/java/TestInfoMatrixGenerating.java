@@ -14,4 +14,9 @@ public class TestInfoMatrixGenerating {
         int[][] resultMatrix=InfoMatrixGenerating.getInfoMatrix("F:\\chromeDownload\\ml-100k\\ml-100k\\genrematrix.txt",1682,19," ");
         System.out.println("Done");
     }
+
+    @Test
+    public void testGenerateUserMatrixFile(){
+        InfoMatrixGenerating.writeUserMatrixFile();
+    }
 }

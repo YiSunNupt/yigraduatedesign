@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="139e7c7f-a099-4eab-91c6-b32de261c223" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/RatingMatrixMakeUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/nmf/NMF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestGenerateUserSimilarMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/IndividualPrediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IndividualPrediction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SimilarMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SimilarMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/TrainDataReadAndWriteToStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/DataReadAndWrite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestReadFromLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestReadFromLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/IndividualPrediction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IndividualPrediction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IndividualPredictionMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IndividualPredictionMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/IndividualPredictionMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SimilarMatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SimilarMatrix.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/util/InfoMatrixGenerating.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/InfoMatrixGenerating.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/util/ItemRequestHitoryProbComputing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/ItemRequestHitoryProbComputing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/RedisPoolConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/RedisPoolConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/TrainDataReadAndWriteToStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestIndividualPrediction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestIndividualPrediction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/TestInfoMatrixGenerating.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestInfoMatrixGenerating.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestItemHistoryRequestProbabilty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestItemHistoryRequestProbabilty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestReadFromLocal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestReadFromLocal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/TestSimilarMatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestSimilarMatrix.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,36 +37,37 @@
     <session id="-2111985759">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.38" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="5" />
-          <entry key="java" value="20" />
+          <entry key="java" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8338" />
+          <entry key="java" value="11640" />
           <entry key="xml" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8338" />
+          <entry key="JAVA" value="11640" />
           <entry key="XML" value="11" />
         </counts>
       </usages-collector>
@@ -78,8 +78,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            <state relative-caret-position="-367">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestGenerateUserSimilarMatrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -87,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1166">
-              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+            <state relative-caret-position="396">
+              <caret line="39" column="74" lean-forward="true" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,9 +120,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="291">
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#155#156#0" expanded="true" />
                 <element signature="e#214#215#0" expanded="true" />
               </folding>
@@ -112,38 +134,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/IndividualPrediction.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
-              <caret line="95" column="33" lean-forward="true" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2805#2806#0" expanded="true" />
-                <element signature="e#2863#2864#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="78" lean-forward="true" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2967#2976#0" expanded="true" />
-                <element signature="e#3441#3450#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/DataReadAndWrite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            <state relative-caret-position="140">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,21 +191,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/util/RedisPoolConnection.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestReadFromLocal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestItemHistoryRequestProbabilty.java" />
         <option value="$PROJECT_DIR$/src/main/java/TrainDataReadAndWriteToStorage.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/TrainDataReadAndWriteToStorage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SimilarMatrix.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestIndividualPrediction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/IndividualPrediction.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/DataReadAndWrite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/IndividualPrediction.java" />
         <option value="$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/RatingMatrixMakeUp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/nmf/NMF.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SimilarMatrix.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestGenerateUserSimilarMatrix.java" />
       </list>
     </option>
   </component>
@@ -234,7 +231,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,19 +267,32 @@
             </path>
             <path>
               <item name="yigraduatedesign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yigraduatedesign" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yigraduatedesign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yigraduatedesign" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yigraduatedesign" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545798583945" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545920443176" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -302,10 +312,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.IndividualPredictionMain">
+  <component name="RunManager" selected="JUnit.TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix">
     <configuration name="IndividualPredictionMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="IndividualPredictionMain" />
       <module name="yigraduatedesign" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yigraduatedesign" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestGenerateUserSimilarMatrix" />
+      <option name="METHOD_NAME" value="testGenerateUserSimilarMatrix" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -320,50 +340,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestInfoMatrixGenerating.testGenerateGenreMatrix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestInfoMatrixGenerating.testGenerateUserMatrixFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yigraduatedesign" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestInfoMatrixGenerating" />
-      <option name="METHOD_NAME" value="testGenerateGenreMatrix" />
+      <option name="METHOD_NAME" value="testGenerateUserMatrixFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestItemHistoryRequestProbabilty.testGenerateHistoricalRequestProb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSimilarMatrix.testGetUserMatrix" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yigraduatedesign" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestItemHistoryRequestProbabilty" />
-      <option name="METHOD_NAME" value="testGenerateHistoricalRequestProb" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestReadFromLocal.testReadAndStoreDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="yigraduatedesign" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestReadFromLocal" />
-      <option name="METHOD_NAME" value="testReadAndStoreDate" />
+      <option name="MAIN_CLASS_NAME" value="TestSimilarMatrix" />
+      <option name="METHOD_NAME" value="testGetUserMatrix" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestReadFromLocal.testReadAndStoreDate" />
-      <item itemvalue="JUnit.TestItemHistoryRequestProbabilty.testGenerateHistoricalRequestProb" />
-      <item itemvalue="JUnit.TestInfoMatrixGenerating.testGenerateGenreMatrix" />
       <item itemvalue="JUnit.TestIndividualPrediction.testPickTopK" />
       <item itemvalue="Application.IndividualPredictionMain" />
+      <item itemvalue="JUnit.TestInfoMatrixGenerating.testGenerateUserMatrixFile" />
+      <item itemvalue="JUnit.TestSimilarMatrix.testGetUserMatrix" />
+      <item itemvalue="JUnit.TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" />
+        <item itemvalue="JUnit.TestInfoMatrixGenerating.testGenerateUserMatrixFile" />
+        <item itemvalue="JUnit.TestSimilarMatrix.testGetUserMatrix" />
         <item itemvalue="Application.IndividualPredictionMain" />
         <item itemvalue="JUnit.TestIndividualPrediction.testPickTopK" />
-        <item itemvalue="JUnit.TestInfoMatrixGenerating.testGenerateGenreMatrix" />
-        <item itemvalue="JUnit.TestItemHistoryRequestProbabilty.testGenerateHistoricalRequestProb" />
-        <item itemvalue="JUnit.TestReadFromLocal.testReadAndStoreDate" />
       </list>
     </recent_temporary>
   </component>
@@ -381,50 +391,51 @@
       <workItem from="1545545858199" duration="10657000" />
       <workItem from="1545630391824" duration="12098000" />
       <workItem from="1545708085067" duration="19456000" />
-      <workItem from="1545794924451" duration="3653000" />
+      <workItem from="1545794924451" duration="20256000" />
+      <workItem from="1545886404748" duration="16947000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestInfoMatrixGenerating_testGenerateGenreMatrix - 2018.12.25 at 12h 34m 42s.xml">
-      <configuration name="TestInfoMatrixGenerating.testGenerateGenreMatrix" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 21h 44m 49s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestInfoMatrixGenerating_testGenerateGenreMatrix - 2018.12.25 at 12h 39m 06s.xml">
-      <configuration name="TestInfoMatrixGenerating.testGenerateGenreMatrix" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 21h 51m 49s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestInfoMatrixGenerating_testGenerateGenreMatrix - 2018.12.25 at 12h 40m 38s.xml">
-      <configuration name="TestInfoMatrixGenerating.testGenerateGenreMatrix" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 21h 56m 32s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestInfoMatrixGenerating_testGenerateGenreMatrix - 2018.12.25 at 13h 38m 13s.xml">
-      <configuration name="TestInfoMatrixGenerating.testGenerateGenreMatrix" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 21h 58m 38s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestInfoMatrixGenerating_testGenerateGenreMatrix - 2018.12.25 at 13h 38m 53s.xml">
-      <configuration name="TestInfoMatrixGenerating.testGenerateGenreMatrix" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 22h 03m 02s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestIndividualPrediction_testPickTopK - 2018.12.25 at 16h 01m 03s.xml">
-      <configuration name="TestIndividualPrediction.testPickTopK" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 22h 11m 21s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestIndividualPrediction_testPickTopK - 2018.12.25 at 16h 01m 52s.xml">
-      <configuration name="TestIndividualPrediction.testPickTopK" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 22h 15m 33s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestIndividualPrediction_testPickTopK - 2018.12.25 at 16h 08m 29s.xml">
-      <configuration name="TestIndividualPrediction.testPickTopK" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 22h 18m 54s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestIndividualPrediction_testPickTopK - 2018.12.25 at 16h 11m 36s.xml">
-      <configuration name="TestIndividualPrediction.testPickTopK" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 22h 19m 24s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestIndividualPrediction_testPickTopK - 2018.12.25 at 16h 22m 41s.xml">
-      <configuration name="TestIndividualPrediction.testPickTopK" configurationId="JUnit" />
+    <history-entry file="TestGenerateUserSimilarMatrix_testGenerateUserSimilarMatrix - 2018.12.27 at 22h 19m 52s.xml">
+      <configuration name="TestGenerateUserSimilarMatrix.testGenerateUserSimilarMatrix" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50191000" />
+    <option name="totallyTimeSpent" value="83741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18401287" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16309012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -433,14 +444,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.889755" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3507795" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946353" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005365" side_tool="true" weight="0.5233853" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32962137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -463,29 +474,137 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java</url>
-          <line>13</line>
+          <line>15</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TestReadFromLocal.java</url>
           <line>53</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TestReadFromLocal.java</url>
           <line>51</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java</url>
           <line>14</line>
           <properties />
           <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java</url>
+          <line>132</line>
+          <properties />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestGenerateUserSimilarMatrix.java</url>
+          <line>10</line>
+          <properties />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>155</line>
+          <properties />
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>159</line>
+          <properties />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>112</line>
+          <properties />
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java</url>
+          <line>120</line>
+          <properties />
+          <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/TestItemHistoryRequestProbabilty.java</url>
@@ -496,16 +615,12 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/impl/GenericObjectPoolConfig.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -597,17 +712,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/IndividualPrediction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        <state relative-caret-position="1870">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        <state relative-caret-position="242">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -631,33 +749,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#155#156#0" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IndividualPrediction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="95" column="33" lean-forward="true" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2863#2864#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/DataReadAndWrite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="140">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -666,23 +761,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="176">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/InfoMatrixGenerating.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="78" lean-forward="true" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
+        <state relative-caret-position="396">
+          <caret line="39" column="74" lean-forward="true" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2967#2976#0" expanded="true" />
-            <element signature="e#3441#3450#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/nmf/NMF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/RatingMatrixMakeUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestSimilarMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestInfoMatrixGenerating.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#155#156#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SimilarMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-367">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestGenerateUserSimilarMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
         </state>
       </provider>
     </entry>

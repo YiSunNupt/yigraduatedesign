@@ -10,31 +10,65 @@ import java.util.Set;
 
 public class IndividualPredictionMain {
 
+    public static IndividualPredictionMain indiPreMain=new IndividualPredictionMain();
+    public static IndividualPrediction indiPre=new IndividualPrediction();
 
+    public static double[] historyReqPrb= ItemRequestHitoryProbComputing.computeHistoryRequestProb();
+
+    static double RADIO=0;
 
 
     public static void main(String[] args) throws Exception {
-        IndividualPredictionMain indiPre=new IndividualPredictionMain();
-        Set<Integer> predictSet=indiPre.getTopKPredictItemOfSingleUser(1,100);
 
-        //有的用户并没有请求
-        // i>=463的用户都没有再做请求，所以此用户之后均返回NaN
-        for(int i=1;i<=943;i++) {
-            System.out.print(i);
-            System.out.print("  ");
-            System.out.println(indiPre.computeHitRate(
-                    "F:\\chromeDownload\\ml-100k\\ml-100k\\u1.test",
+
+        List<String> lineList=DataReadAndWrite.readFromFile("F:\\chromeDownload\\ml-100k\\ml-100k\\u1.test");
+
+        int K=10;
+        int count=0;
+
+        for(int i=1;i<=462;i++) {
+
+            System.out.println("=====i="+i);
+
+            Set<Integer> predictSet = indiPreMain.getTopKPredictItemOfSingleUser(i, K);
+
+
+            //有的用户并没有请求
+            // i>=463的用户都没有再做请求，所以此用户之后均返回NaN
+
+            //double[] individualPredictHitRate=new double[944];
+
+            //
+            double individualPredictHitRate = indiPreMain.computeSingleUserHitRateFromTestDataFile(
+                    lineList,
                     i,
-                    predictSet));
+                    predictSet);
+
+
+            //根据历史数据得出的历史访问概率，进行最流行缓存，与我们提出的个人预测并缓存作比较
+            Set<Integer> topKHistoryRequestSet = new HashSet<Integer>();
+            int[] topKHistoryRequestedItem = indiPre.pickTopKItem(historyReqPrb, K);
+
+            for (int ele : topKHistoryRequestedItem) {
+                topKHistoryRequestSet.add(ele);
+            }
+
+            Set<Integer> userActualReq = getActualRequestSet(lineList, i);
+            double MostPopularCacheHirRate = computeHitRate(topKHistoryRequestSet, userActualReq);
+
+            if(individualPredictHitRate-MostPopularCacheHirRate>=0){
+                System.out.println("count increse");
+                count++;
+            }
         }
+
+
+        System.out.println(count);
+
     }
 
     //返回预测的用户i最有可能请求的前K个item
     public Set<Integer> getTopKPredictItemOfSingleUser(int user_id,int K) throws Exception {
-        IndividualPrediction indiPre=new IndividualPrediction();
-
-        //由历史访问获得的文件历史访问概率
-        double[] historyReqPrb= ItemRequestHitoryProbComputing.computeHistoryRequestProb();
 
         Jedis jedis=new RedisPoolConnection().getLocalJedis();
 
@@ -44,9 +78,12 @@ public class IndividualPredictionMain {
         //
         int[] reqHisArr=new int[1683];
 
+        int[] rates=new int[1683];
+
         for(String ele:reqHistory){
             String[] eleArr=ele.split("_");
             reqHisArr[Integer.valueOf(eleArr[0])]=1;
+            rates[Integer.valueOf(eleArr[0])]=Integer.valueOf(eleArr[1]);
         }
 
 
@@ -56,7 +93,7 @@ public class IndividualPredictionMain {
 
         //对用户1进行需求预测，返回probsPredicts[i]表示user_1对i-th内容的预测请求概率
         double[] probsPredicts=indiPre.getUnBrowsedContentPredictProbsWithGenreMatrix(
-                reqHisArr, historyReqPrb,itemGenreSimilarMatrix);
+                reqHisArr,rates,RADIO, historyReqPrb,itemGenreSimilarMatrix);
 
         int[] topKPredict=indiPre.pickTopKItem(probsPredicts,K);
 
@@ -71,9 +108,17 @@ public class IndividualPredictionMain {
 
 
 
-    public double computeHitRate(String testDataPath,int user_id,Set<Integer> predictSet){
+    public double computeSingleUserHitRateFromTestDataFile(List<String> lineList,int user_id,Set<Integer> predictSet){
 
-        List<String> lineList=DataReadAndWrite.readFromFile(testDataPath);
+
+        Set<Integer> userActualReq=getActualRequestSet(lineList,user_id);
+
+        return computeHitRate(predictSet,userActualReq);
+
+    }
+
+    //lineList test data文件读取之后的行列表
+    public static Set<Integer> getActualRequestSet(List<String> lineList,int user_id){
 
         Set<Integer> userActualReq=new HashSet<Integer>();
         for(String str : lineList){
@@ -85,15 +130,16 @@ public class IndividualPredictionMain {
             }
         }
 
+        return userActualReq;
+    }
+
+    public static double computeHitRate(Set<Integer> predict,Set<Integer> actual){
         int hitNum=0;
-        for(int i:userActualReq){
-            if(predictSet.contains(i)){
+        for(int i:actual){
+            if(predict.contains(i)){
                 hitNum+=1;
             }
         }
-
-
-        return hitNum*1.0/userActualReq.size();
-
+        return hitNum*1.0/actual.size();
     }
 }
