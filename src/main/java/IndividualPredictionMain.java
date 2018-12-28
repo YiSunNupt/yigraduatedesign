@@ -18,19 +18,19 @@ public class IndividualPredictionMain {
     static double RADIO=0;
 
 
-    public static void main(String[] args) throws Exception {
+    //public static void main(String[] args) throws Exception {
 
 
-        List<String> lineList=DataReadAndWrite.readFromFile("F:\\chromeDownload\\ml-100k\\ml-100k\\u1.test");
+     //   List<String> lineList=DataReadAndWrite.readFromFile("F:\\chromeDownload\\ml-100k\\ml-100k\\u1.test");
 
-        int K=10;
-        int count=0;
+     //   int K=10;
+     //   int count=0;
 
-        for(int i=1;i<=462;i++) {
+     //   for(int i=1;i<=462;i++) {
 
-            System.out.println("=====i="+i);
+      //      System.out.println("=====i="+i);
 
-            Set<Integer> predictSet = indiPreMain.getTopKPredictItemOfSingleUser(i, K);
+     //       Set<Integer> predictSet = indiPreMain.getTopKPredictItemOfSingleUser(i, K);
 
 
             //有的用户并没有请求
@@ -39,33 +39,95 @@ public class IndividualPredictionMain {
             //double[] individualPredictHitRate=new double[944];
 
             //
-            double individualPredictHitRate = indiPreMain.computeSingleUserHitRateFromTestDataFile(
-                    lineList,
-                    i,
-                    predictSet);
+     //       double individualPredictHitRate = indiPreMain.computeSingleUserHitRateFromTestDataFile(
+      //              lineList,
+     //               i,
+       //             predictSet);
 
 
             //根据历史数据得出的历史访问概率，进行最流行缓存，与我们提出的个人预测并缓存作比较
-            Set<Integer> topKHistoryRequestSet = new HashSet<Integer>();
-            int[] topKHistoryRequestedItem = indiPre.pickTopKItem(historyReqPrb, K);
+       //     Set<Integer> topKHistoryRequestSet = new HashSet<Integer>();
+      //      int[] topKHistoryRequestedItem = indiPre.pickTopKItem(historyReqPrb, K);
 
-            for (int ele : topKHistoryRequestedItem) {
+       //     for (int ele : topKHistoryRequestedItem) {
+        //        topKHistoryRequestSet.add(ele);
+       //     }
+
+        //    Set<Integer> userActualReq = getActualRequestSet(lineList, i);
+        //    double MostPopularCacheHirRate = computeHitRate(topKHistoryRequestSet, userActualReq);
+
+        //    if(individualPredictHitRate-MostPopularCacheHirRate>=0){
+       //         System.out.println("count increse");
+       //         count++;
+       //     }
+       // }
+
+
+      //  System.out.println(count);
+
+    //}
+
+    public static double[] getHitRateOnMostPopularCache(int cacheNum,int usersNum){
+
+        double[] hitRateOfAllUsers=new double[usersNum+1];
+
+        //根据历史数据得出的历史访问概率，进行最流行缓存，与我们提出的个人预测并缓存作比较
+        Set<Integer> topKHistoryRequestSet = new HashSet<Integer>();
+        int[] topKHistoryRequestedItem = indiPre.pickTopKItem(historyReqPrb, cacheNum);
+
+        for (int ele : topKHistoryRequestedItem) {
                 topKHistoryRequestSet.add(ele);
-            }
-
-            Set<Integer> userActualReq = getActualRequestSet(lineList, i);
-            double MostPopularCacheHirRate = computeHitRate(topKHistoryRequestSet, userActualReq);
-
-            if(individualPredictHitRate-MostPopularCacheHirRate>=0){
-                System.out.println("count increse");
-                count++;
-            }
         }
 
 
-        System.out.println(count);
+        List<String> lineList=DataReadAndWrite.readFromFile("F:\\chromeDownload\\ml-100k\\ml-100k\\u1.test");
+        for(int i=1;i<hitRateOfAllUsers.length;i++) {
+            Set<Integer> userActualReq = getActualRequestSet(lineList, i);
+
+            hitRateOfAllUsers[i]=computeHitRate(topKHistoryRequestSet,userActualReq);
+        }
+
+        return hitRateOfAllUsers;
+
 
     }
+
+    public double getHitRateAfterPredictBySimilarUserPrefrence(int user_id,int similarUserNum,int CacheNum_K) throws Exception {
+
+
+        int[][] userMatrix=SimilarMatrix.getUserMatrix("F:\\chromeDownload\\ml-100k\\ml-100k\\usermatrix.txt");
+
+        double radio1=1;
+        double radio2=1;
+
+        int itemNum=1682;
+
+        double[][] userSimilarMatrix=new SimilarMatrix().generateUserSimilarMatrix(userMatrix,radio1,radio2);
+
+        int[] topKSimilarUsers=getTopKSimilarUsers(userSimilarMatrix,user_id,similarUserNum);
+
+        //返回这些相似用户最喜欢的K个item序号
+        int[] topKPrefrenceItem=getTopKitemsWithSimilarUsers(topKSimilarUsers,CacheNum_K,itemNum);
+
+
+
+        //计算缓存命中概率
+        List<String> lineList=DataReadAndWrite.readFromFile("F:\\chromeDownload\\ml-100k\\ml-100k\\u1.test");
+
+        Set<Integer> userActualReq = getActualRequestSet(lineList, user_id);
+
+        Set<Integer> prerictItemSet=new HashSet<Integer>();
+
+        for(int item:topKPrefrenceItem){
+            prerictItemSet.add(item);
+        }
+        double MostPopularCacheHirRate = computeHitRate(prerictItemSet, userActualReq);
+
+        return MostPopularCacheHirRate;
+
+    }
+
+
 
     //返回预测的用户i最有可能请求的前K个item
     public Set<Integer> getTopKPredictItemOfSingleUser(int user_id,int K) throws Exception {
@@ -104,6 +166,61 @@ public class IndividualPredictionMain {
         }
 
         return topKPredictSet;
+    }
+
+
+    //找出与user_id这个用户相似的topK个用户
+    public int[] getTopKSimilarUsers(double[][] userSimilarMatrix,int user_id,int K){
+        int userNum=userSimilarMatrix.length;
+
+
+        double[] similarVector=userSimilarMatrix[user_id-1];
+
+
+        //调整原来的相似向量，因为原来的相思向量下标i表示第i+1个用户，纠正后下标和用户序号一致
+        double[] similarVectorAfterAdjustIndex=new double[similarVector.length+1];
+
+        for(int i=1;i<similarVectorAfterAdjustIndex.length;i++){
+            similarVectorAfterAdjustIndex[i]=similarVector[i-1];
+        }
+
+
+        int[] topKUsers=indiPre.pickTopKItem(similarVectorAfterAdjustIndex,K);
+
+        return topKUsers;
+
+    }
+
+    //根据相似用户寻找这些用户最喜欢的item,
+    public int[] getTopKitemsWithSimilarUsers(int[] similarUsers,int K,int itemNum){
+
+        double[] itemReRating=new double[itemNum+1];
+        int[] userNumPreferOnItem=new int[itemNum+1];
+
+        for(int i:similarUsers){
+
+            //返回的数组是用户i的访问历史，下标i对于i-th文件，存放的内容是用户对这个文件的打分
+            int [] requestHistoryOfUser_I=ItemRequestHitoryProbComputing.getRequestHistory(i);
+
+            for(int j=1;j<requestHistoryOfUser_I.length;j++){
+                itemReRating[j]+=requestHistoryOfUser_I[j];
+                if(requestHistoryOfUser_I[j]!=0){
+                    userNumPreferOnItem[j]+=1;
+                }
+            }
+        }
+
+        for(int n=1;n<itemReRating.length;n++){
+            if(userNumPreferOnItem[n]==0) {
+                itemReRating[n]=0;
+            }else{
+                itemReRating[n] = itemReRating[n] * 1.0 / userNumPreferOnItem[n];
+            }
+        }
+
+
+        return indiPre.pickTopKItem(itemReRating,K);
+
     }
 
 
