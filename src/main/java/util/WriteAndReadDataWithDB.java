@@ -206,7 +206,7 @@ public class WriteAndReadDataWithDB {
 
     }
 
-    protected static Connection getConn() {
+    public static Connection getConn() {
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/yigraduate";
         String username = "user";

@@ -8,7 +8,7 @@ public class UserDataProcessingTest {
 
     @Test
     public void testGetUserData(){
-        Map<Integer,Integer> result= UserDataProcessing.getUserData(1,true,200);
+        Map<Integer,Integer> result= UserDataProcessing.getUserData(1,true,1682);
 
         System.out.println("rows: "+result.size());
         Set<Integer> set=result.keySet();
