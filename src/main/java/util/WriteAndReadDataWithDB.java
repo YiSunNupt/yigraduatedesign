@@ -201,10 +201,10 @@ public class WriteAndReadDataWithDB {
         }
     }
 
-    public static void main(String[] args){
-        generateNewTrainAndTestData(0.8);
+    //public static void main(String[] args){
+      //  generateNewTrainAndTestData(0.8);
 
-    }
+    //}
 
     public static Connection getConn() {
         String driver = "com.mysql.jdbc.Driver";
