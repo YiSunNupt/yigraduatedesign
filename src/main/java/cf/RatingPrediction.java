@@ -11,18 +11,45 @@ import java.util.*;
 public class RatingPrediction {
 
     //item id 上限
-    public static int ITEM_NUM_LIMIT=300;
+    //public static int ITEM_NUM_LIMIT=300;
+
+    //public static int NEAREST_K_VALUE=5;
+
+    private static Connection connection=WriteAndReadDataWithDB.getConn();
+
+
+    //生成包含所有用户评分的二维矩阵
+    public double[][] getRatingsIncludingPrediction(int maxUserId, int maxItemId,int SimilarNeighborNum){
+
+        double[][] ratings=new double[maxUserId+1][maxItemId+1];
+        for(int userId=1;userId<=maxUserId;userId++){
+
+            double[] userRatings=userRatingPredict(userId,maxUserId,maxItemId,SimilarNeighborNum);
+
+            for(int itemId=1;itemId<=maxItemId;itemId++){
+                ratings[userId][itemId]=userRatings[itemId];
+            }
+
+            System.out.println("the "+userId+"-th user's ratings are put in ======================" +
+                    "=====================================================");
+
+        }
+
+        return ratings;
+
+    }
+
 
 
     //K表示用于评分估计的最近邻居数,maxUserId用来截取一部分用户数据，而不是直接拿出所有用户数据
     //返回item对应的评分，下标i对应i-th item，所在位置的double值为评分
     public double[] userRatingPredict(int userId,int maxUserId, int maxItemId,int K){
 
-        double aveRatingOfUser=getUserAverageRating(userId,ITEM_NUM_LIMIT);
+        double aveRatingOfUser=getUserAverageRating(connection,userId,maxItemId);
 
         List<UserAndSimilarity> userSimilarityList=new ArrayList<UserAndSimilarity>();
         for(int i=1;i<=maxUserId;i++){
-            UserAndSimilarity listEle=new UserAndSimilarity(i,userSimilarity(userId,i));
+            UserAndSimilarity listEle=new UserAndSimilarity(i,userSimilarity(userId,i,maxItemId));
             userSimilarityList.add(listEle);
         }
 
@@ -51,7 +78,7 @@ public class RatingPrediction {
         double[] allRatingsOfUser=new double[maxItemId+1];
 
         for(int item=1;item<=maxItemId;item++){
-            int rating=getRating(userId,item,true);
+            int rating=getRating(connection,userId,item,true);
             if(rating!=0){
                 allRatingsOfUser[item]=rating;
             }else{
@@ -64,8 +91,8 @@ public class RatingPrediction {
                     //i-th大的similarity的用户id与similarity
                     UserAndSimilarity singleUserSimilarity=userSimilarityList.get(i);
                     int anotherUserId=singleUserSimilarity.getIndex();
-                    int neighborRating=getRating(anotherUserId,item,true);
-                    double aveRatingOfAnotherUser=getUserAverageRating(anotherUserId,ITEM_NUM_LIMIT);
+                    int neighborRating=getRating(connection,anotherUserId,item,true);
+                    double aveRatingOfAnotherUser=getUserAverageRating(connection,anotherUserId,maxItemId);
                     if(neighborRating==0){
                         continue;
                     }else{
@@ -131,43 +158,45 @@ public class RatingPrediction {
     }
 
 
-    public static double userSimilarity(int u_id,int v_id){
+    public static double userSimilarity(int u_id,int v_id,int maxItemId){
         double sim=0.0;
-        Map<Integer,Integer> itemRateMap_u=getUserItemRateMap(u_id);
+        Map<Integer,Integer> itemRateMap_u=getUserItemRateMap(u_id,maxItemId);
 
-        Map<Integer,Integer> itemRateMap_v=getUserItemRateMap(v_id);
+        Map<Integer,Integer> itemRateMap_v=getUserItemRateMap(v_id,maxItemId);
 
         Set<Integer> itemSet_u=itemRateMap_u.keySet();
         Set<Integer> itemSet_v=itemRateMap_v.keySet();
         //交集
         Set<Integer> intersectionSet=getIntersectionSet(itemSet_u,itemSet_v);
 
-        double ave_u=getUserAverageRating(u_id,ITEM_NUM_LIMIT);
-        double ave_v=getUserAverageRating(v_id,ITEM_NUM_LIMIT);
+        double ave_u=getUserAverageRating(connection,u_id,maxItemId);
+        double ave_v=getUserAverageRating(connection,v_id,maxItemId);
 
         for(int itemId:intersectionSet){
-            int rate_u=getRating(u_id,itemId,true);
-            int rate_v=getRating(v_id,itemId,true);
+            int rate_u=getRating(connection,u_id,itemId,true);
+            int rate_v=getRating(connection,v_id,itemId,true);
             sim+=userItemRatingSimilarity(rate_u,rate_v)*userItemInterestSimilarity(rate_u,rate_v,
                     ave_u, ave_v);
         }
 
-        double userConfidence=userInterConfidence(u_id,v_id);
+        double userConfidence=userInterConfidence(u_id,v_id,maxItemId);
 
         double simiResult=userConfidence*sim/intersectionSet.size();
         return simiResult;
 
     }
 
-    public static double getUserAverageRating(int userId,int maxItemId){
+    public static double getUserAverageRating(Connection connection,int userId,int maxItemId){
         String sql="select avg(rating) from traindata_new where userid="+userId+" and itemid<="+maxItemId;
-        Connection conn= WriteAndReadDataWithDB.getConn();
+        Connection conn= connection;
         PreparedStatement pst=null;
         try{
             pst=conn.prepareStatement(sql);
             ResultSet result=pst.executeQuery();
-            result.next();
-            double aveRating=result.getDouble(1);
+            double aveRating=0;
+            if(result.next()) {
+                aveRating = result.getDouble(1);
+            }
             result.close();
             return aveRating;
 
@@ -182,11 +211,7 @@ public class RatingPrediction {
                     System.out.println(e.getStackTrace());
                 }
             }
-            try {
-                conn.close();
-            }catch (SQLException e){
-                System.out.println(e.getStackTrace());
-            }
+
         }
         return 0;
     }
@@ -206,11 +231,11 @@ public class RatingPrediction {
         return res;
     }
 
-    public static double userInterConfidence(int userId_u,int userId_v){
+    public static double userInterConfidence(int userId_u,int userId_v,int maxItemId){
 
-        Map<Integer,Integer> itemRateMap_u=getUserItemRateMap(userId_u);
+        Map<Integer,Integer> itemRateMap_u=getUserItemRateMap(userId_u,maxItemId);
 
-        Map<Integer,Integer> itemRateMap_v=getUserItemRateMap(userId_v);
+        Map<Integer,Integer> itemRateMap_v=getUserItemRateMap(userId_v,maxItemId);
 
         Set<Integer> itemSet_u=itemRateMap_u.keySet();
         Set<Integer> itemSet_v=itemRateMap_v.keySet();
@@ -245,15 +270,15 @@ public class RatingPrediction {
         return intersectionSet;
     }
 
-    public static Map<Integer,Integer> getUserItemRateMap(int userid){
-        Map<Integer,Integer> itemRateMap=UserDataProcessing.getUserData(
-                userid,true,ITEM_NUM_LIMIT);
+    public static Map<Integer,Integer> getUserItemRateMap(int userid,int maxItemId){
+        Map<Integer,Integer> itemRateMap=UserDataProcessing.getUserData(connection,
+                userid,true,maxItemId);
 
         return itemRateMap;
 
     }
 
-    public static int getRating(int userId,int itemId,boolean isTrainData){
+    public static int getRating(Connection connection,int userId,int itemId,boolean isTrainData){
         String sql;
         if(isTrainData){
             sql="select rating from traindata_new where userid="+userId+" and itemid="+itemId;
@@ -262,13 +287,16 @@ public class RatingPrediction {
             sql="select rating from testdata_new where userid="+userId+" and itemid="+itemId;
         }
 
-        Connection conn= WriteAndReadDataWithDB.getConn();
+        Connection conn= connection;
         PreparedStatement pst=null;
         try{
             pst=conn.prepareStatement(sql);
             ResultSet result=pst.executeQuery();
-            result.next();
-            int rating=result.getInt(1);
+
+            int rating=0;
+            if(result.next()) {
+                rating = result.getInt(1);
+            }
             result.close();
             return rating;
 
@@ -283,12 +311,19 @@ public class RatingPrediction {
                     System.out.println(e.getStackTrace());
                 }
             }
-            try {
-                conn.close();
+        }
+        return 0;
+    }
+
+
+    public static void  fianlCloseConnection(){
+        if(connection!=null){
+            try{
+                connection.close();
             }catch (SQLException e){
+                System.out.println("close Database Connection Failed");
                 System.out.println(e.getStackTrace());
             }
         }
-        return 0;
     }
 }

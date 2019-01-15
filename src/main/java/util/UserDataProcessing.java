@@ -16,8 +16,8 @@ public class UserDataProcessing {
 
 
     //根据用户id，返回其item-rating映射
-    public static Map<Integer, Integer> getUserData(int userId, boolean isTrainDateTable, int itemNumLimit){
-        Connection conn=WriteAndReadDataWithDB.getConn();
+    public static Map<Integer, Integer> getUserData(Connection connonection,int userId, boolean isTrainDateTable, int itemNumLimit){
+        Connection conn=connonection;
         PreparedStatement pstat=null;
         String querySql;
         if(isTrainDateTable){
@@ -47,13 +47,6 @@ public class UserDataProcessing {
                 try {
                     pstat.close();
                 } catch (SQLException e){
-                    System.out.println(e.getStackTrace());
-                }
-            }
-            if(conn!=null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
                     System.out.println(e.getStackTrace());
                 }
             }

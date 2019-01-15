@@ -2,14 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="139e7c7f-a099-4eab-91c6-b32de261c223" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hitrate/HitRateComputing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itemrating/ItemRatingAfterAHPWeight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itemrating/ItemRatingConsideringAccessHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mainanalysis/MainProgram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mostpopular/MostPopularCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/userclassfication/UserClassfication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/UserToRatingArrPickTopK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HitRateComputingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ItemRatingAfterAHPWeightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ItemRatingConsideringAccessHistoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MostPopularCacheTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/UserClassficationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/UserToRatingArrPickTopKTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/WriteAndReadDataWithDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/WriteAndReadDataWithDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/UserDataProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/UserDataProcessing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/RatingPredictionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RatingPredictionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserDataProcessingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserDataProcessingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cf/RatingPrediction$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cf/RatingPrediction$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cf/RatingPrediction$UserAndSimilarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cf/RatingPrediction$UserAndSimilarity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cf/RatingPrediction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cf/RatingPrediction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/WriteAndReadDataWithDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/WriteAndReadDataWithDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/UserDataProcessing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/UserDataProcessing.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/RatingPredictionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/RatingPredictionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/UserDataProcessingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/UserDataProcessingTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,44 +43,46 @@
     <session id="-2111985759">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.23" value="2" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.40" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="java" value="40" />
+          <entry key="java" value="61" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="40" />
+          <entry key="JAVA" value="61" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="20170" />
+          <entry key="java" value="27589" />
           <entry key="xml" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="20170" />
+          <entry key="JAVA" value="27589" />
           <entry key="XML" value="27" />
         </counts>
       </usages-collector>
@@ -73,10 +91,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/WriteAndReadDataWithDB.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/RatingPredictionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="206" column="6" selection-start-line="206" selection-start-column="6" selection-end-line="206" selection-end-column="6" />
+            <state relative-caret-position="-36">
+              <caret line="29" column="60" lean-forward="true" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,10 +103,94 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/UserDataProcessingTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+            <state relative-caret-position="572">
+              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ItemRatingConsideringAccessHistoryTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="28" column="91" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ItemRatingAfterAHPWeightTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/UserToRatingArrPickTopKTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/itemrating/ItemRatingAfterAHPWeight.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/MostPopularCacheTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hitrate/HitRateComputing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/HitRateComputingTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-244">
+              <caret line="37" column="91" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,82 +199,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mainanalysis/MainProgram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-110">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#686#705#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#973#974#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1055#1056#0" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1149#1150#0" expanded="true" />
-                <element signature="e#1199#1200#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/UserDataProcessing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/RatingPredictionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="38" column="63" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_121/src.zip!/java/lang/Math.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12892">
-              <caret line="642" column="25" selection-start-line="642" selection-start-column="25" selection-end-line="642" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_121/src.zip!/java/sql/ResultSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="1144" column="12" selection-start-line="1144" selection-start-column="12" selection-end-line="1144" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestIndividualPrediction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestItemHistoryRequestProbabilty.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+            <state relative-caret-position="66">
+              <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,6 +218,18 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>package userclassfication\;\n\n\nimport util\.WriteAndReadDataWithDB\;\n\nimport java\.sql\.Connection\;\nimport java\.sql\.PreparedStatement\;\nimport java\.sql\.ResultSet\;\nimport java\.sql\.SQLException\;\n\n\/\/根据用户访问项目频率对用户进行分级\，初步分为四级\npublic class UserClassfication \{\n\n    private static String TRAIN_DATA_BASE\=\&quot;traindata_new\&quot;\;\n\n    private static String COUNT_SQL_HEAD\=\&quot;select count\(\*\) from \&quot;\;\n\n    public int\[\] getUserAcessNum\(int maxUserId\,int maxItemId\)\{\n\n        \/\/都是从下标1开始\，下标对应用户id\n        int\[\] allUserAccessNum\=new int\[maxItemId\+1\]\;\n\n\n\n        Connection conn\= WriteAndReadDataWithDB\.getConn\(\)\;\n        PreparedStatement pstat\=null\;\n        String sql\=COUNT_SQL_HEAD\+TRAIN_DATA_BASE\+\&quot; where userid\=\? and itemid\&lt;\=\?\&quot;\;\n        try\{\n            pstat\=conn\.prepareStatement\(sql\)\;\n        \}catch \(SQLException e\)\{\n            System\.out\.println\(e\.getStackTrace\(\)\)\;\n            return null\;\n        \}\n\n        \n            try\{\n\n                for\(int i\=1\;i\&lt;\=maxUserId\;i\+\+\) \{\n                    pstat\.setInt\(1\, i\)\;\n                    pstat\.setInt\(2\, maxItemId\)\;\n\n                    ResultSet result \= pstat\.executeQuery\(\)\;\n                    result\.next\(\)\;\n                    allUserAccessNum\[i\] \= result\.getInt\(1\)\;\n                    System\.out\.println\(\&quot;the \&quot; \+ i \+ \&quot;\-th user access got and is \&quot; \+ allUserAccessNum\[i\]\)\;\n                    result\.close\(\)\;\n                \}\n\n            \}catch \(SQLException e\)\{\n                System\.out\.println\(e\.getStackTrace\(\)\)\;\n            \}finally \{\n                try\{\n                    pstat\.close\(\)\;\n                    conn\.close\(\)\;\n                \}catch \(Exception e\)\{\n                    System\.out\.println\(e\.getStackTrace\(\)\)\;\n                \}\n            \}\n        \n\n\n        return allUserAccessNum\;\n\n    \}\n\n\n\n\}\nclass UserAndAccessFrequency\{\n    int userId\;\n    double frequency\;\n\n    public UserAndAccessFrequency\(int userId\, double frequency\) \{\n        this\.userId \= userId\;\n        this\.frequency \= frequency\;\n    \}\n\n    public int getUserId\(\) \{\n        return userId\;\n    \}\n\n    public void setUserId\(int userId\) \{\n        this\.userId \= userId\;\n    \}\n\n    public double getFrequency\(\) \{\n        return frequency\;\n    \}\n\n    public void setFrequency\(double frequency\) \{\n        this\.frequency \= frequency\;\n    \}\n\}</find>
+      <find>conn</find>
+      <find>user's ratings are put in</find>
+      <find>30</find>
+      <find>300</find>
+      <find>5</find>
+      <find>2</find>
+      <find>1</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -215,11 +257,25 @@
         <option value="$PROJECT_DIR$/src/test/java/TestHitRateWithSimilarUserPrediction.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/util/WriteDataToDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/WriteAndReadDataWithDB.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UserClassficationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userclassfication/UserClassfication.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/UserDataProcessing.java" />
         <option value="$PROJECT_DIR$/src/test/java/UserDataProcessingTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/WriteAndReadDataWithDB.java" />
-        <option value="$PROJECT_DIR$/src/test/java/RatingPredictionTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ItemRatingAfterAHPWeight.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itemrating/ItemRatingAfterAHPWeight.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itemrating/ItemRatingConsideringAccessHistory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/UserToRatingArrPickTopK.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mostpopular/MostPopularCache.java" />
+        <option value="$PROJECT_DIR$/src/test/java/MostPopularCacheTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hitrate/HitRateComputing.java" />
         <option value="$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java" />
+        <option value="$PROJECT_DIR$/src/test/java/RatingPredictionTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ItemRatingConsideringAccessHistoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/HitRateComputingTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ItemRatingAfterAHPWeightTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UserToRatingArrPickTopKTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mainanalysis/MainProgram.java" />
       </list>
     </option>
   </component>
@@ -296,7 +352,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="itemrating" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yigraduatedesign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yigraduatedesign" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mainanalysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yigraduatedesign" type="b2602c69:ProjectViewProjectNode" />
@@ -327,7 +391,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547215792326" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547519714712" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -347,71 +411,74 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RatingPredictionTest.testUserRatingPredict">
-    <configuration name="RatingPredictionTest.testUserInterConfidence" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.MainProgram">
+    <configuration name="MainProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mainanalysis.MainProgram" />
+      <module name="yigraduatedesign" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mainanalysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HitRateComputingTest.testComputeHitRate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yigraduatedesign" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RatingPredictionTest" />
-      <option name="METHOD_NAME" value="testUserInterConfidence" />
+      <option name="MAIN_CLASS_NAME" value="HitRateComputingTest" />
+      <option name="METHOD_NAME" value="testComputeHitRate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RatingPredictionTest.testUserItemInterestSimilarity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HitRateComputingTest.testgetItemAccessList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yigraduatedesign" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RatingPredictionTest" />
-      <option name="METHOD_NAME" value="testUserItemInterestSimilarity" />
+      <option name="MAIN_CLASS_NAME" value="HitRateComputingTest" />
+      <option name="METHOD_NAME" value="testgetItemAccessList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RatingPredictionTest.testUserRatingPredict" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RatingPredictionTest.testGetRatingsIncludingPrediction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yigraduatedesign" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RatingPredictionTest" />
-      <option name="METHOD_NAME" value="testUserRatingPredict" />
+      <option name="METHOD_NAME" value="testGetRatingsIncludingPrediction" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RatingPredictionTest.testUserSimilarity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserToRatingArrPickTopKTest.getTopKRatingItemId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yigraduatedesign" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RatingPredictionTest" />
-      <option name="METHOD_NAME" value="testUserSimilarity" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDataProcessingTest.testGetUserData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="yigraduatedesign" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserDataProcessingTest" />
-      <option name="METHOD_NAME" value="testGetUserData" />
+      <option name="MAIN_CLASS_NAME" value="UserToRatingArrPickTopKTest" />
+      <option name="METHOD_NAME" value="getTopKRatingItemId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RatingPredictionTest.testUserItemInterestSimilarity" />
-      <item itemvalue="JUnit.UserDataProcessingTest.testGetUserData" />
-      <item itemvalue="JUnit.RatingPredictionTest.testUserInterConfidence" />
-      <item itemvalue="JUnit.RatingPredictionTest.testUserSimilarity" />
-      <item itemvalue="JUnit.RatingPredictionTest.testUserRatingPredict" />
+      <item itemvalue="JUnit.UserToRatingArrPickTopKTest.getTopKRatingItemId" />
+      <item itemvalue="JUnit.HitRateComputingTest.testgetItemAccessList" />
+      <item itemvalue="JUnit.HitRateComputingTest.testComputeHitRate" />
+      <item itemvalue="JUnit.RatingPredictionTest.testGetRatingsIncludingPrediction" />
+      <item itemvalue="Application.MainProgram" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RatingPredictionTest.testUserRatingPredict" />
-        <item itemvalue="JUnit.RatingPredictionTest.testUserSimilarity" />
-        <item itemvalue="JUnit.RatingPredictionTest.testUserInterConfidence" />
-        <item itemvalue="JUnit.UserDataProcessingTest.testGetUserData" />
-        <item itemvalue="JUnit.RatingPredictionTest.testUserItemInterestSimilarity" />
+        <item itemvalue="Application.MainProgram" />
+        <item itemvalue="JUnit.UserToRatingArrPickTopKTest.getTopKRatingItemId" />
+        <item itemvalue="JUnit.RatingPredictionTest.testGetRatingsIncludingPrediction" />
+        <item itemvalue="JUnit.HitRateComputingTest.testComputeHitRate" />
+        <item itemvalue="JUnit.HitRateComputingTest.testgetItemAccessList" />
       </list>
     </recent_temporary>
   </component>
@@ -435,49 +502,53 @@
       <workItem from="1547039923591" duration="1566000" />
       <workItem from="1547041709542" duration="3969000" />
       <workItem from="1547089026795" duration="23679000" />
-      <workItem from="1547179298538" duration="16009000" />
+      <workItem from="1547179298538" duration="16019000" />
+      <workItem from="1547262037272" duration="459000" />
+      <workItem from="1547263709836" duration="13058000" />
+      <workItem from="1547433656788" duration="25484000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 16h 39m 49s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="UserToRatingArrPickTopKTest_testGetTopKItem - 2019.01.14 at 20h 17m 33s.xml">
+      <configuration name="UserToRatingArrPickTopKTest.testGetTopKItem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserSimilarity - 2019.01.11 at 16h 40m 01s.xml">
-      <configuration name="RatingPredictionTest.testUserSimilarity" configurationId="JUnit" />
+    <history-entry file="UserToRatingArrPickTopKTest_getTopKRatingItemId - 2019.01.14 at 20h 22m 17s.xml">
+      <configuration name="UserToRatingArrPickTopKTest.getTopKRatingItemId" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 02m 47s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="MostPopularCacheTest_testGetTopKItemMostPopular - 2019.01.14 at 20h 50m 15s.xml">
+      <configuration name="MostPopularCacheTest.testGetTopKItemMostPopular" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 03m 44s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="MostPopularCacheTest_testGetTopKItemMostPopular - 2019.01.14 at 20h 50m 45s.xml">
+      <configuration name="MostPopularCacheTest.testGetTopKItemMostPopular" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 04m 40s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="HitRateComputingTest_testgetItemAccessList - 2019.01.14 at 21h 09m 49s.xml">
+      <configuration name="HitRateComputingTest.testgetItemAccessList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 08m 59s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="HitRateComputingTest_testComputeHitRate - 2019.01.14 at 21h 23m 17s.xml">
+      <configuration name="HitRateComputingTest.testComputeHitRate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 11m 22s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="HitRateComputingTest_testComputeHitRate - 2019.01.14 at 21h 32m 23s.xml">
+      <configuration name="HitRateComputingTest.testComputeHitRate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 13m 11s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="HitRateComputingTest_testComputeHitRate - 2019.01.14 at 21h 39m 09s.xml">
+      <configuration name="HitRateComputingTest.testComputeHitRate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 31m 32s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="HitRateComputingTest_testComputeHitRate - 2019.01.14 at 21h 53m 28s.xml">
+      <configuration name="HitRateComputingTest.testComputeHitRate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RatingPredictionTest_testUserRatingPredict - 2019.01.11 at 17h 34m 48s.xml">
-      <configuration name="RatingPredictionTest.testUserRatingPredict" configurationId="JUnit" />
+    <history-entry file="UserToRatingArrPickTopKTest_getTopKRatingItemId - 2019.01.15 at 10h 24m 54s.xml">
+      <configuration name="UserToRatingArrPickTopKTest.getTopKRatingItemId" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139252000" />
+    <option name="totallyTimeSpent" value="178263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19581544" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1668455" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -486,8 +557,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5033408" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946353" weight="0.4556314" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40423164" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946353" weight="0.45545658" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -504,7 +575,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.028433476" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.028433476" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,6 +769,66 @@
           <properties />
           <option name="timeStamp" value="149" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/UserClassficationTest.java</url>
+          <line>11</line>
+          <properties />
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/UserClassficationTest.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/UserClassficationTest.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/userclassfication/UserClassfication.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java</url>
+          <line>281</line>
+          <properties />
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/itemrating/ItemRatingAfterAHPWeight.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/itemrating/ItemRatingAfterAHPWeight.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/itemrating/ItemRatingAfterAHPWeight.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/TestItemHistoryRequestProbabilty.java</url>
           <line>7</line>
@@ -825,16 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IndividualPredictionMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1782">
@@ -947,6 +1068,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/Java/jdk1.8.0_121/src.zip!/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24596">
+          <caret line="1144" column="12" selection-start-line="1144" selection-start-column="12" selection-end-line="1144" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestIndividualPrediction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -964,10 +1092,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/ItemRequestHitoryProbComputing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/WriteAndReadDataWithDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="206" column="6" selection-start-line="206" selection-start-column="6" selection-end-line="206" selection-end-column="6" />
+        <state relative-caret-position="276">
+          <caret line="208" column="34" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -976,8 +1114,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UserDataProcessingTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        <state relative-caret-position="218">
+          <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -986,25 +1124,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/UserDataProcessing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+        <state relative-caret-position="264">
+          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_121/src.zip!/java/sql/ResultSet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/userclassfication/UserClassfication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="1144" column="12" selection-start-line="1144" selection-start-column="12" selection-end-line="1144" selection-end-column="12" />
+        <state relative-caret-position="64">
+          <caret line="19" column="71" lean-forward="true" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/RatingPredictionTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/UserClassficationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="38" column="63" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+        <state relative-caret-position="220">
+          <caret line="22" column="76" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/itemrating/ItemRatingConsideringAccessHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/UserToRatingArrPickTopK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mostpopular/MostPopularCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hitrate/HitRateComputing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/MostPopularCacheTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1013,19 +1211,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cf/RatingPrediction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="572">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#686#705#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/RatingPredictionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="29" column="60" lean-forward="true" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ItemRatingConsideringAccessHistoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="28" column="91" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/HitRateComputingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-244">
+          <caret line="37" column="91" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ItemRatingAfterAHPWeightTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UserToRatingArrPickTopKTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/itemrating/ItemRatingAfterAHPWeight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainanalysis/MainProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
