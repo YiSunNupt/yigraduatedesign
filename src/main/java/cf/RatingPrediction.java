@@ -56,13 +56,17 @@ public class RatingPrediction {
         userSimilarityList.sort(new Comparator<UserAndSimilarity>() {
             @Override
             public int compare(UserAndSimilarity us1, UserAndSimilarity us2) {
-                if (us1.getSimlarity()> us2.getSimlarity()) {
+
+                return Double.compare(us1.getSimlarity(),us2.getSimlarity());
+
+
+               /* if (us1.getSimlarity()> us2.getSimlarity()) {
                     return 1;
                 } else if (us1.getSimlarity()== us2.getSimlarity()) {
                     return 0;
                 } else {
                     return -1;
-                }
+                }*/
             }
         });
 
@@ -78,6 +82,7 @@ public class RatingPrediction {
         double[] allRatingsOfUser=new double[maxItemId+1];
 
         for(int item=1;item<=maxItemId;item++){
+
             int rating=getRating(connection,userId,item,true);
             if(rating!=0){
                 allRatingsOfUser[item]=rating;
@@ -107,7 +112,6 @@ public class RatingPrediction {
                     allRatingsOfUser[item]=0;
                 }else {
                     double endResult = aveRatingOfUser + up * 1.0 / down;
-
                     allRatingsOfUser[item] = endResult;
                 }
 
@@ -181,8 +185,12 @@ public class RatingPrediction {
 
         double userConfidence=userInterConfidence(u_id,v_id,maxItemId);
 
-        double simiResult=userConfidence*sim/intersectionSet.size();
-        return simiResult;
+        if(intersectionSet.size()==0){
+            return 0;
+        }else {
+            double simiResult = userConfidence * sim / intersectionSet.size();
+            return simiResult;
+        }
 
     }
 

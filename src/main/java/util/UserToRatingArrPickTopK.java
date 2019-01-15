@@ -15,13 +15,9 @@ public class UserToRatingArrPickTopK {
         itemAndRatingList.sort(new Comparator<ItemAndRatingPOJO>() {
             @Override
             public int compare(ItemAndRatingPOJO o1, ItemAndRatingPOJO o2) {
-                if(o1.getRating()>o2.getRating()){
-                    return 1;
-                }else if(o1.getRating()==o2.getRating()){
-                    return 0;
-                }else{
-                    return -1;
-                }
+
+                return Double.compare(o1.getRating(),o2.getRating());
+
             }
         });
 
